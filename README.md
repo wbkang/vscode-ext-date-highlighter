@@ -43,6 +43,9 @@ Initial release.
 
 Fix some NPEs.
 
+### 0.0.3
+
+Correct extensionKind.
 ---
 
 ## Following extension guidelines

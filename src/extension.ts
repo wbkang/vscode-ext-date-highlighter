@@ -66,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 			const endPos = activeEditor.document.positionAt(match.index + match[0].length);
 			const decoration = { 
                 range: new vscode.Range(startPos, endPos), 
-                hoverMessage: 'Number **' + match[0] + '**' 
+                // hoverMessage: 'Number **' + match[0] + '**' 
             };
 			
 			// super hacky markdown strike detection
