@@ -37,9 +37,12 @@ export function activate(context: vscode.ExtensionContext) {
 			console.debug("Skip highlighting because there is no activeEditor");
 			return;
 		}
-		
+
 		const config = vscode.workspace.getConfiguration("datehighlighter");
-		let allowGlobs: Array<String> = config.get("onlyHighlightGlob") as Array<String>;
+		let allowGlobs: Array<String>|undefined = config.get("onlyHighlightGlob");
+		if (!allowGlobs) {
+			allowGlobs = ["**/*.{md,txt}"];
+		}
 		let anyMatch = allowGlobs.some((glob) => {
 			if (!activeEditor) {
 				return false;

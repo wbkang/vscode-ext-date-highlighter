@@ -2,7 +2,7 @@
   "name": "datehighlighter",
   "displayName": "Date Highlighter",
   "description": "Syntax highlighting for yyyy-MM-dd dates for your text file. Useful for todo files",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "wbk",
   "license": "MIT",
   "engines": {
