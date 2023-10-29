@@ -1,0 +1,86 @@
+{
+  "name": "datehighlighter",
+  "displayName": "Date Highlighter",
+  "description": "Syntax highlighting for yyyy-MM-dd dates for your text file. Useful for todo files",
+  "version": "0.0.1",
+  "publisher": "wbk",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wbkang/vscode-ext-date-highlighter.git"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "extensionKind": ["ui"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "datehighlighter",
+      "datehighlighter.onlyHighlightGlob": {
+        "type": ["array"],
+        "default": ["**/*.{md,txt}"],
+        "description": "Only hightlight these files"
+      }
+    },
+    "colors": [
+      {
+        "id": "wbk.datehighlighter.overdueBackground",
+        "description": "Background decoration color for overdue dates",
+        "defaults": {
+          "dark": "#FF5B22dd",
+          "light": "#FF5B22dd",
+          "highContrast": "#FF5B22dd"
+        }
+      },
+      {
+        "id": "wbk.datehighlighter.todayBackground",
+        "description": "Background decoration color for today",
+        "defaults": {
+          "dark": "#4ebbffdd",
+          "light": "#4ebbffdd",
+          "highContrast": "#4ebbffdd"
+        }
+      },
+      {
+        "id": "wbk.datehighlighter.futureBackground",
+        "description": "Background decoration color for future items",
+        "defaults": {
+          "dark": "#C2D9FF55",
+          "light": "#C2D9FF55",
+          "highContrast": "#C2D9FF55"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}
